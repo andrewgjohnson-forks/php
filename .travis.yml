@@ -4,27 +4,21 @@ sudo: false
 
 dist: trusty
 
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+  - hhvm
+
 matrix:
   include:
     - php: 5.2
       dist: precise
     - php: 5.3
       dist: precise
-    - php: 5.4
-    - php: 5.5
-    - php: 5.6
-    - php: 7.0
-      before_script:
-        - curl -sSfL -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
-    - php: 7.1
-      before_script:
-        - curl -sSfL -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
-    - php: 7.2
-      before_script:
-        - curl -sSfL -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
-    - php: hhvm
-      before_script:
-        - curl -sSfL -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
 
 before_script:
   - mysql -e "create database IF NOT EXISTS hello_world_test;" -uroot;
