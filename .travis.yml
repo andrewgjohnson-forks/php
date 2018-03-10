@@ -22,7 +22,7 @@ matrix:
 
 before_script:
   - mysql -e "create database IF NOT EXISTS hello_world_test;" -uroot;
-#  - curl -sSfL -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
+  - curl -sSfL -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
 
 # omitting "script:" will default to phpunit
 # use the $DB env variable to determine the phpunit.xml to use
